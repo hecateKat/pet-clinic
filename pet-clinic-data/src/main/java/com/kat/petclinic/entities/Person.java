@@ -1,6 +1,6 @@
 package com.kat.petclinic.entities;
 
-public class Person {
+public class Person extends BaseEntity {
 
     private String name;
     private String surname;

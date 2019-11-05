@@ -1,29 +1,29 @@
 package com.kat.petclinic.services.maps;
 
-import com.kat.petclinic.entities.Veterinarian;
+import com.kat.petclinic.entities.Vet;
 import com.kat.petclinic.services.CrudService;
 
 import java.util.Set;
 
-public class VeterinarianServiceMap extends AbstractMapService<Veterinarian, Long>  implements CrudService<Veterinarian, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long>  implements CrudService<Vet, Long> {
 
     @Override
-    public Set<Veterinarian> findAll() {
+    public Set<Vet> findAll() {
         return super.findAll();
     }
 
     @Override
-    public Veterinarian findById(Long id) {
+    public Vet findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public Veterinarian save(Veterinarian object) {
+    public Vet save(Vet object) {
         return super.save(object.getId(), object);
     }
 
     @Override
-    public void delete(Veterinarian object) {
+    public void delete(Vet object) {
         super.delete(object);
     }
 

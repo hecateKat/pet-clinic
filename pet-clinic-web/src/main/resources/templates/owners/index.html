@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
 <head>
     <meta charset="UTF-8">
     <title>List of Owners</title>
 </head>
 <body>
-<h1 th:text="'List of Owners'">Owners List</h1>
+<h2 th:text="'List of Owners'">Owners List</h2>
 
-<table>
+<table id="owners" class="table table-striped">
     <thread>
         <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Surname</th>
+            <th style="width: 150px;">Id</th>
+            <th style="width: 200px;">Name</th>
+            <th style="width: 120px;">Surname</th>
         </tr>
     </thread>
 

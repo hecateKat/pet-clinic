@@ -1,8 +1,15 @@
 package com.kat.petclinic.entities;
 
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public class Person extends BaseEntity {
 
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "surname")
     private String surname;
 
     public String getName() {

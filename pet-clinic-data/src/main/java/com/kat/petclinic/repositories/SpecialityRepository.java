@@ -1,0 +1,7 @@
+package com.kat.petclinic.repositories;
+
+import com.kat.petclinic.entities.Speciality;
+import org.springframework.data.repository.CrudRepository;
+
+public interface SpecialityRepository extends CrudRepository<Speciality, Long> {
+}

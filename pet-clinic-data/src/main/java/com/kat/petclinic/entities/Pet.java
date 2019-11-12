@@ -2,6 +2,8 @@ package com.kat.petclinic.entities;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "pets")
@@ -20,6 +22,9 @@ public class Pet extends BaseEntity{
 
     @Column(name = "birth_date")
     private LocalDate birthDay;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")  //deleting pet will delete all visits associated with that pet
+    private Set<Visit> visits = new HashSet<>();
 
     public String getName() {
         return name;
@@ -51,5 +56,13 @@ public class Pet extends BaseEntity{
 
     public void setBirthDay(LocalDate birthDay) {
         this.birthDay = birthDay;
+    }
+
+    public Set<Visit> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(Set<Visit> visits) {
+        this.visits = visits;
     }
 }

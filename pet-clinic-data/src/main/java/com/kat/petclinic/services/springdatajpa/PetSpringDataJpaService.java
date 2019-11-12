@@ -41,7 +41,7 @@ public class PetSpringDataJpaService implements PetService {
     }
 
     @Override
-    public void deteleById(Long id) {
+    public void deleteById(Long id) {
         petRepository.deleteById(id);
     }
 }

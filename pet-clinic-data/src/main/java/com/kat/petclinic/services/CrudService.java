@@ -12,5 +12,5 @@ public interface CrudService<T, ID> {   //generics, coz other Services will exte
 
     void delete (T object);
 
-    void deteleById(ID id);
+    void deleteById(ID id);
 }

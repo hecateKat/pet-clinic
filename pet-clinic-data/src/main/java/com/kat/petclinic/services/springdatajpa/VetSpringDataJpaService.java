@@ -44,7 +44,7 @@ public class VetSpringDataJpaService implements VetService {
     }
 
     @Override
-    public void deteleById(Long id) {
+    public void deleteById(Long id) {
         vetRepository.deleteById(id);
     }
 }

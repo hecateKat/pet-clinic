@@ -64,6 +64,7 @@
                     <td th:text="${#temporals.format(visit.date, 'yyyy-MM-dd')}"></td>
                     <td th:text="${visit?.description}"></td>
                 </tr>
+
                 <tr>
                     <td><a
                             th:href="@{{ownerId}/pets/{petId}/edit(ownerId=${owner.id},petId=${pet.id})}">Edit

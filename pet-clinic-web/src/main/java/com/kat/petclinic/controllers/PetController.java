@@ -6,6 +6,7 @@ import com.kat.petclinic.entities.PetType;
 import com.kat.petclinic.services.OwnerService;
 import com.kat.petclinic.services.PetService;
 import com.kat.petclinic.services.PetTypeService;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.StringUtils;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.Collection;
 
+@Controller
+@RequestMapping("/owners/{ownerId}")
 public class PetController {
 
     private static final String VIEWS_PETS_CREATE_OR_UPDATE_FORM = "pets/createOrUpdatePetForm";

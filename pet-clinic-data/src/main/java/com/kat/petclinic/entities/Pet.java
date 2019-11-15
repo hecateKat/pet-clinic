@@ -26,20 +26,20 @@ public class Pet extends BaseEntity {
     @JoinColumn(name = "owner_id")
     private Owner owner;
 
-    @Column(name = "birth_day")
-    private LocalDate birthDay;
+    @Column(name = "birth_date")
+    private LocalDate birthDate;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
     //deleting pet will delete all visits associated with that pet
     private Set<Visit> visits = new HashSet<>();
 
     @Builder
-    public Pet(Long id, String name, PetType petType, Owner owner, LocalDate birthDay, Set<Visit> visits) {
+    public Pet(Long id, String name, PetType petType, Owner owner, LocalDate birthDate, Set<Visit> visits) {
         super(id);
         this.name = name;
         this.petType = petType;
         this.owner = owner;
-        this.birthDay = birthDay;
+        this.birthDate = birthDate;
 
         if (visits == null || visits.size() > 0) {
             this.visits = visits;

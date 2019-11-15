@@ -30,35 +30,37 @@ public class OwnerController {
         dataBinder.setDisallowedFields("id");
     }
 
-//    @RequestMapping({"", "/", "/index", "/index.html"})
-//    public String listOwners(Model model){
-//
-//        model.addAttribute("owners", ownerService.findAll());
-//
-//        return "owners/index";
-//    }
+    @RequestMapping({"", "/", "/index", "/index.html"})
+    public String listOwners(Model model){
+
+        model.addAttribute("owners", ownerService.findAll());
+
+        return "owners/index";
+    }
 
     @RequestMapping("/find")
-    public String findOwners(Model model) {
+    public String findOwners(Model model){
         model.addAttribute("owner", Owner.builder().build());
         return "owners/findOwners";
     }
 
     @GetMapping
     public String processFindForm(Owner owner, BindingResult result, Model model){
-        if (owner.getSurname() == null){
-            owner.setSurname("");
+        if (owner.getLastName() == null) {
+            owner.setLastName(""); // empty string signifies broadest possible search
         }
 
-        List<Owner> results = ownerService.findAllBySurnameLike(owner.getSurname());
+        List<Owner> results = ownerService.findAllByLastNameLike("%"+ owner.getLastName() + "%");
 
         if (results.isEmpty()) {
-            result.rejectValue("surname", "notFound", "not found");
+            result.rejectValue("lastName", "notFound", "not found");
             return "owners/findOwners";
-        }else if (results.size() == 1) {
+
+        } else if (results.size() == 1) {
             owner = results.get(0);
-            return "redirect/owners" + owner.getId();
-        }else {
+            return "redirect:/owners" + "/" + owner.getId();
+
+        } else {
             model.addAttribute("selections", results);
             return "owners/ownersList";
         }
@@ -70,6 +72,4 @@ public class OwnerController {
         mav.addObject(ownerService.findById(ownerId));
         return mav;
     }
-
 }
-

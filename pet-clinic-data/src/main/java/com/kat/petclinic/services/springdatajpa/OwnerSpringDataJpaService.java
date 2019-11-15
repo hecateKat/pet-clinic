@@ -27,13 +27,13 @@ public class OwnerSpringDataJpaService implements OwnerService {
     }
 
     @Override
-    public Owner findBySurname(String surname) {
-        return ownerRepository.findBySurname(surname);
+    public Owner findByLastName(String lastName) {
+        return ownerRepository.findByLastName(lastName);
     }
 
     @Override
-    public List<Owner> findAllBySurnameLike(String surname) {
-        return ownerRepository.findAllBySurnameLike(surname);
+    public List<Owner> findAllByLastNameLike(String lastName) {
+        return ownerRepository.findAllByLastNameLike(lastName);
     }
 
     @Override

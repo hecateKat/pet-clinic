@@ -58,8 +58,8 @@ public class DataLoader implements CommandLineRunner {
 
 
         Owner owner1 = new Owner();
-        owner1.setName("Graham");
-        owner1.setSurname("Masterton");
+        owner1.setFirstName("Graham");
+        owner1.setLastName("Masterton");
         owner1.setAddress("123 Darkshore");
         owner1.setCity("Miami");
         owner1.setTelephone("999666444");
@@ -68,15 +68,15 @@ public class DataLoader implements CommandLineRunner {
         grahamsPet.setPetType(savedDogPetType);
         grahamsPet.setName("Dracul");
         grahamsPet.setOwner(owner1);
-        grahamsPet.setBirthDay(LocalDate.now().minusMonths(6));
+        grahamsPet.setBirthDate(LocalDate.now().minusMonths(6));
         owner1.getPets().add(grahamsPet);
 
         ownerService.save(owner1);
 
 
         Owner owner2 = new Owner();
-        owner2.setName("Anne");
-        owner2.setSurname("Rice");
+        owner2.setFirstName("Anne");
+        owner2.setLastName("Rice");
         owner2.setAddress("321 Tirisfal");
         owner2.setCity("Stormwind");
         owner2.setTelephone("888555333");
@@ -85,7 +85,7 @@ public class DataLoader implements CommandLineRunner {
         anniesPet.setPetType(savedCatPetType);
         anniesPet.setName("Luna");
         anniesPet.setOwner(owner2);
-        anniesPet.setBirthDay(LocalDate.now().minusMonths(9));
+        anniesPet.setBirthDate(LocalDate.now().minusMonths(9));
         owner2.getPets().add(anniesPet);
 
         ownerService.save(owner2);
@@ -99,22 +99,22 @@ public class DataLoader implements CommandLineRunner {
 
 
         Vet vet1 = new Vet();
-        vet1.setName("Vlad");
-        vet1.setSurname("Tepesz");
+        vet1.setFirstName("Vlad");
+        vet1.setLastName("Tepesz");
         vet1.getSpecialities().add(savedRadiology);
 
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
-        vet2.setName("Mortizia");
-        vet2.setSurname("Addams");
+        vet2.setFirstName("Mortizia");
+        vet2.setLastName("Addams");
         vet2.getSpecialities().add(savedDentistry);
 
         vetService.save(vet2);
 
         Vet vet3 = new Vet();
-        vet3.setName("Jaina");
-        vet3.setSurname("Proudmore");
+        vet3.setFirstName("Jaina");
+        vet3.setLastName("Proudmore");
         vet3.getSpecialities().add(savedSurgery);
 
         vetService.save(vet3);

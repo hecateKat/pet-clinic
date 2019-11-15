@@ -12,7 +12,7 @@
 <table class="table table-striped" th:object="${owner}">
     <tr>
         <th>Name</th>
-        <td><b th:text="*{name + ' ' + surname}"></b></td>
+        <td><b th:text="*{firstName + ' ' + lastName}"></b></td>
     </tr>
     <tr>
         <th>Address</th>
@@ -45,9 +45,9 @@
             <dl class="dl-horizontal">
                 <dt>Name</dt>
                 <dd th:text="${pet.name}" /></dd>
-                <dt>Birth Day</dt>
+                <dt>Birth Date</dt>
                 <dd
-                        th:text="${#temporals.format(pet.birthDay, 'yyyy-MM-dd')}" /></dd>
+                        th:text="${#temporals.format(pet.birthDate, 'yyyy-MM-dd')}" /></dd>
                 <dt>Type</dt>
                 <dd th:text="${pet.petType}" /></dd>
             </dl>
@@ -64,7 +64,6 @@
                     <td th:text="${#temporals.format(visit.date, 'yyyy-MM-dd')}"></td>
                     <td th:text="${visit?.description}"></td>
                 </tr>
-
                 <tr>
                     <td><a
                             th:href="@{{ownerId}/pets/{petId}/edit(ownerId=${owner.id},petId=${pet.id})}">Edit
